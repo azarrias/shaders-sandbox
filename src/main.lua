@@ -12,7 +12,7 @@ function love.load()
   love.window.setMode(800, 450)
   love.window.setTitle("Shaders sandbox")
   
-  shader = love.graphics.newShader("shaders/2D_gradient.fs")
+  shader = love.graphics.newShader("shaders/circle.fs")
   shader:send("resolution", { love.graphics.getWidth(), love.graphics.getHeight() })
   
   love.keyboard.keysPressed = {}
