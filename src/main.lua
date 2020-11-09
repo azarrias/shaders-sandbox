@@ -12,7 +12,9 @@ function love.load()
   love.window.setMode(800, 450)
   love.window.setTitle("Shaders sandbox")
   
-  shader = love.graphics.newShader("shaders/circle.fs")
+  start_time = love.timer.getTime()
+  
+  shader = love.graphics.newShader("shaders/starfield.fs")
   shader:send("resolution", { love.graphics.getWidth(), love.graphics.getHeight() })
   
   love.keyboard.keysPressed = {}
@@ -25,6 +27,8 @@ function love.update(dt)
   if love.keyboard.keysPressed['escape'] then
     love.event.quit()
   end
+  
+  shader:send("time", love.timer.getTime() - start_time)
   
   love.keyboard.keysPressed = {}
   love.mouse.buttonPressed = {}
