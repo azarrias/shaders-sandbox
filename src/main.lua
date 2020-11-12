@@ -9,12 +9,12 @@ function love.load()
   math.randomseed(os.time())
 
   -- Set up window
-  love.window.setMode(800, 450)
+  love.window.setMode(1920, 1080)
   love.window.setTitle("Shaders sandbox")
   
   start_time = love.timer.getTime()
   
-  shader = love.graphics.newShader("shaders/starfield.fs")
+  shader = love.graphics.newShader("shaders/scrolling_starfield.fs")
   shader:send("resolution", { love.graphics.getWidth(), love.graphics.getHeight() })
   
   love.keyboard.keysPressed = {}
